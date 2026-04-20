@@ -1,0 +1,46 @@
+cpu-bind=MASK - bp1-compute064, task  0  0 [2079137]: mask 0x56000056000 set
++ module load openmpi/4.1.8-6env
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module load orca/6.1.0-b32i
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ ORCA_INPUT=opt_1_wat
++ ORIGINAL_DIR=/user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration
++ export WORK_DIR=/user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration/14806227_opt_1_wat
++ WORK_DIR=/user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration/14806227_opt_1_wat
++ mkdir -p /user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration/14806227_opt_1_wat
++ cp -Lr opt_1_wat.inp /user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration/14806227_opt_1_wat/
++ cd /user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration/14806227_opt_1_wat
+++ hostname
++ echo Running on host bp1-compute064
+++ date
++ echo Time is 'Thu Nov 27 16:21:32 GMT 2025'
+++ pwd
++ echo Directory is /user/work/kp22738/Diss/Orca/pyruvic_anion/geometry_optimisation/vazquez_configuration/14806227_opt_1_wat
++ echo SLURM job ID is 14806227
++ /software/spack/linux-rocky8-broadwell/gcc-12.3.0/orca-6.1.0-b32i/bin/orca opt_1_wat.inp
+[bp1-compute064:2572158] *** Process received signal ***
+[bp1-compute064:2572158] Signal: Segmentation fault (11)
+[bp1-compute064:2572158] Signal code: Invalid permissions (2)
+[bp1-compute064:2572158] Failing at address: 0x7fb4713ee89f
+[bp1-compute064:2572158] [ 0] /lib64/libpthread.so.0(+0x12cf0)[0x7fb473556cf0]
+[bp1-compute064:2572158] [ 1] [0x7fb4713ee89f]
+[bp1-compute064:2572158] *** End of error message ***
+[file orca_tools/qcmsg.cpp, line 394]: 
+  .... aborting the run
+

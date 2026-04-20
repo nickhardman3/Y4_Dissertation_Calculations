@@ -1,0 +1,40 @@
+#!/bin/bash
+#SBATCH --account=chem023762
+#SBATCH --partition=compute
+#SBATCH --job-name=opt_non
+#SBATCH --error=slurm-%j.err
+#SBATCH --nodes=1  # number of nodes.
+#SBATCH --ntasks-per-node=8  # task per node
+#SBATCH --cpus-per-task=1 # cpus per task
+#SBATCH --mem-per-cpu=2400MB # memory per cpu
+#SBATCH --time=1-00:00:00
+
+ set -x  # All commands printed to terminal
+
+ # Load Orca6.1
+
+ module load openmpi/4.1.8-6env
+ module load orca/6.1.0-b32i
+
+ ORCA_INPUT=opt_non
+
+ ORIGINAL_DIR=${SLURM_SUBMIT_DIR}
+
+ export WORK_DIR=${SLURM_SUBMIT_DIR}/${SLURM_JOBID}_${ORCA_INPUT}
+
+ mkdir -p $WORK_DIR
+
+ cp -Lr ${ORCA_INPUT}.inp $WORK_DIR/
+
+ cd $WORK_DIR
+
+# Add a bit of extra information to your output file:
+
+echo Running on host "$(hostname)"
+echo Time is "$(date)"
+echo Directory is "$(pwd)"
+echo SLURM job ID is "${SLURM_JOB_ID}"
+
+# Run program
+
+/software/spack/linux-rocky8-broadwell/gcc-12.3.0/orca-6.1.0-b32i/bin/orca ${ORCA_INPUT}.inp > ${ORIGINAL_DIR}/${ORCA_INPUT}.out

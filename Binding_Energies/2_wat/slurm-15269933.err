@@ -1,0 +1,37 @@
+cpu-bind=MASK - bp1-compute177, task  0  0 [3945638]: mask 0x30000c0030000c00 set
++ module load openmpi/4.1.8-6env
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module load orca/6.1.0-b32i
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ ORCA_INPUT=sp_t1_2_wat
++ ORIGINAL_DIR=/user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat
++ export WORK_DIR=/user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat/15269933_sp_t1_2_wat
++ WORK_DIR=/user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat/15269933_sp_t1_2_wat
++ mkdir -p /user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat/15269933_sp_t1_2_wat
++ cp -Lr sp_t1_2_wat.inp /user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat/15269933_sp_t1_2_wat/
++ cd /user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat/15269933_sp_t1_2_wat
+++ hostname
++ echo Running on host bp1-compute177
+++ date
++ echo Time is 'Mon Jan 12 14:52:38 GMT 2026'
+++ pwd
++ echo Directory is /user/work/kp22738/Diss/Orca/pyruvic_anion/binding_energies/2_wat/15269933_sp_t1_2_wat
++ echo SLURM job ID is 15269933
++ /software/spack/linux-rocky8-broadwell/gcc-12.3.0/orca-6.1.0-b32i/bin/orca sp_t1_2_wat.inp
+[file orca_tools/Tool-GTO-Bases/basissets.cpp, line 531]: Unable to write data in TBasis::WriteElement!
